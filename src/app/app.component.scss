@@ -1,0 +1,24 @@
+@for $size from 1 through 20 {
+    $value: $size*5;
+
+    .h#{$value}vh{
+        height: 0vh + $value;
+    }
+}
+
+$dark: #212121;
+$violet: #A73E79;
+
+.text-violet{
+    color: $violet !important;
+}
+
+.bg-dark{
+    background: $dark !important;
+}
+
+.bg-img-build{
+    background: url("../assets/build.png") no-repeat;
+    background-size: 150px 150px;
+    background-position: center;
+}
