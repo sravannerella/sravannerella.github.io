@@ -8,17 +8,37 @@
 
 $dark: #212121;
 $violet: #A73E79;
+$orange: #D35936;
 
 .text-violet{
     color: $violet !important;
+}
+
+.text-orange{
+    color: $orange !important;
 }
 
 .bg-dark{
     background: $dark !important;
 }
 
+.bg-img{
+    background-size: 150px 150px !important;
+    background-position: center !important;
+}
+
 .bg-img-build{
     background: url("../assets/build.png") no-repeat;
-    background-size: 150px 150px;
-    background-position: center;
+    @extend .bg-img;
+}
+
+.bg-img-idea{
+    background: url("../assets/ideas.png") no-repeat;
+    @extend .bg-img;
+}
+
+
+.bg-img-code{
+    background: url("../assets/code.png") no-repeat;
+    @extend .bg-img;
 }
