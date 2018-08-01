@@ -1,11 +1,3 @@
-@for $size from 1 through 20 {
-    $value: $size*5;
-
-    .h#{$value}vh{
-        height: 0vh + $value;
-    }
-}
-
 $dark: #212121;
 $violet: #A73E79;
 $orange: #D35936;

@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@for $i from 1 through 5 {
+    $value: $i * 100;
+
+    .img-#{$i*25}{
+        width: ($i * 25) + 0px;
+        height: ($i * 25) + 0px;
+        background: transparent;
+        object-fit: contain;
+    }
+
+    .mw-#{$value}px{
+        max-width: $value + 0px;
+    }
+    .mh-#{$value}px{
+        max-height: $value + 0px;
+    }
+}
+
+@for $size from 1 through 20 {
+    $value: $size*5;
+
+    .h#{$value}vh{
+        height: 0vh + $value;
+    }
+}
