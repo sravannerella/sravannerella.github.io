@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@for $i from 1 through 5 {
+@for $i from 1 through 10 {
     $value: $i * 100;
 
     .img-#{$i*25}{
@@ -22,5 +22,21 @@
 
     .h#{$value}vh{
         height: 0vh + $value;
+    }
+}
+
+.mr-15{
+    margin-right: -15px;
+}
+
+.box{
+    width: 500px;
+    height: 350px;
+}
+
+@for $i from 1 through 10 {
+    $val : $i * 50;
+    .w-#{$val}px{
+        width: $val + 0px;
     }
 }

@@ -46,18 +46,6 @@ export class LangsComponent implements OnInit {
 		}, {
 			name: "PHP",
 			icon: "php.png"
-		}, {
-			name: "Swift",
-			icon: "swift.png"
-		}, {
-			name: "GitHub",
-			icon: "git.png"
-		}, {
-			name: "Android Studio",
-			icon: "androidStudio.png"
-		}, {
-			name: "Slack",
-			icon: "slack.png"
 		}
 	]
 
