@@ -46,3 +46,27 @@
         height: $val + 0px !important;
     }
 }
+
+.icon-blue{
+    &:hover{
+        color: #007bff;
+    }
+}
+
+.icon-red{
+    &:hover{
+        color: #dc3545;
+    }
+}
+
+.icon-info{
+    &:hover{
+        color: #17a2b8;
+    }
+}
+
+.icon-violet{
+    &:hover{
+        color: #6f42c1;
+    }
+}
