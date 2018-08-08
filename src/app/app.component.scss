@@ -33,3 +33,36 @@ $orange: #D35936;
     background: url("../assets/code.png") no-repeat;
     @extend .bg-img;
 }
+
+.bg-img-email{
+    background: url("../assets/mail.png") no-repeat;
+    @extend .bg-img;
+}
+
+.t-slant{
+    background: red;
+    transform: perspective(320px) rotateY(13deg);
+    width: 120%;
+}
+
+.g-box-shadow{
+    box-shadow: 0 6px 20px rgba(0,0,0,.15);
+}
+
+input{
+    border: none;
+    background: rgba(255,255,255,.2);
+    border-radius: 4px 0 0 4px;
+    font-size: 13px;
+    box-shadow: none;
+    font-weight: 500;
+    height: 100%;
+    outline: 0;
+    flex-grow: 1;
+}
+
+input[type="submit"]{
+    @extend input;
+    border-radius: 0 4px 4px 0;
+    height: 48px;
+}

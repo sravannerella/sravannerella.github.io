@@ -31,12 +31,18 @@
 
 .box{
     width: 500px;
-    height: 350px;
+    
+    img{
+        height: 350px;
+    }
 }
 
 @for $i from 1 through 10 {
     $val : $i * 50;
     .w-#{$val}px{
-        width: $val + 0px;
+        width: $val + 0px !important;
+    }
+    .h-#{$val}px{
+        height: $val + 0px !important;
     }
 }
