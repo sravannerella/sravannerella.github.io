@@ -41,26 +41,27 @@
 		</div>
 	</div>
 
-
 	<div class="mr-15 h40vh bg-light">
 		<h2 class="text-center text-capitalize font-weight-bold pt-4">Personal Projects</h2>
 		<br>
-		<div class="w-100 d-flex justify-content-between">
-			<div class="box">
-				<img class="w-100" src="../assets/SyntaxPacket.png" alt="About">
-				<br>
-				<h5 class="text-center font-weight-bold">SyntaxPacket</h5>
-			</div>
-			<div class="box">
-				<img class="w-100" src="../assets/flickmatics.png" alt="About">
-				<br>
-				<h5 class="text-center font-weight-bold text-danger">FlickMatics</h5>
-			</div>
-			<div class="box">
-				<img class="w-100" src="../assets/hashcode.png" alt="About">
-				<br>
-				<h5 class="text-center font-weight-bold"><span class="text-primary">#</span>Code</h5>
-			</div>
+		<div class="d-flex justify-content-center">
+			<ngb-carousel class="w-100">
+				<ng-template ngbSlide *ngFor="let image of images">
+					<div class="row">
+						<div class="col d-flex align-items-center">
+							<p class="lead text-center mx-auto">
+								<span class="text-{{image.color}} mx-auto text-center font-30 font-weight-bold">{{image.name}}</span><br>
+								<span class="text-monospace d-block mt-3">{{image.description}}</span>
+							</p>
+						</div>
+						<div class="col d-flex align-items-center">
+							<div class="box">
+								<img [src]="image.img" alt="image.name">
+							</div>
+						</div>
+					</div>
+				</ng-template>
+			</ngb-carousel>
 		</div>
 	</div>
 
