@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { NgbCarouselConfig } from '../../node_modules/@ng-bootstrap/ng-bootstrap';
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
@@ -18,7 +19,7 @@ export class AppComponent {
   constructor(config: NgbCarouselConfig) {
     config.interval = 5000;
     config.wrap = true;
-    config.showNavigationArrows = false;
+    config.showNavigationArrows = true;
     config.keyboard = false;
     config.pauseOnHover = false;
   }

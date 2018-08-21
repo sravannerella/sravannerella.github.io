@@ -19,24 +19,19 @@ $orange: #D35936;
     background-position: center !important;
 }
 
-.bg-img-build{
-    background: url("../assets/build.png") no-repeat;
-    @extend .bg-img;
-}
+$imgs: 'build', 'code', 'email';
 
-.bg-img-idea{
-    background: url("../assets/ideas.png") no-repeat;
-    @extend .bg-img;
-}
+@each $img in $imgs {
+    .bg-img-#{$img}{
+        background: url("../assets/#{$img}.png") no-repeat;
+        @extend .bg-img;
+    }
+    @media screen and (max-width: 765px) {
+        .bg-img-#{$img}{
+            background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url("../assets/#{$img}.png") no-repeat;
+        }
+    }
 
-.bg-img-code{
-    background: url("../assets/code.png") no-repeat;
-    @extend .bg-img;
-}
-
-.bg-img-email{
-    background: url("../assets/mail.png") no-repeat;
-    @extend .bg-img;
 }
 
 .t-slant{
@@ -69,4 +64,32 @@ input[type="submit"]{
 
 ngb-carousel.w-100.carousel.slide{
     outline: none;
+}
+
+li[id*="ngb-slide-"]{
+    background: $violet;
+}
+
+li[id*="ngb-slide-"].active{
+    background: $dark;
+}
+
+.box{
+    text-align: center;
+    width: 100%;
+}
+
+a.carousel-control-prev, a.carousel-control-next{
+    // filter: invert(50%) grayscale(100%);
+    // background: linear-gradient(to right, #BA6CB1, #9956E8);
+    background: $dark;
+    opacity: 1;
+    // background: $dark;
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: calc(496px / 2 - 50px);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3), 0 0 4px rgba(0, 0, 0, 0.2);
 }
