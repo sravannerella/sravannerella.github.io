@@ -28,7 +28,7 @@ $orange: #D35936;
     // background: linear-gradient(to right, #EA3354, #E837A5);
     // background: linear-gradient(to right, #B13FF5, #83C3F9);
     // transition: all 2s ease-in-out;
-    background: url('../assets/background.png') no-repeat;
+    background: url("../assets/background.png") no-repeat;
 }
 
 @-webkit-keyframes typing { from { width: 0; } }
@@ -48,7 +48,7 @@ $imgs: 'build', 'code', 'email';
 
 @each $img in $imgs {
     .bg-img-#{$img}{
-        background: url("./assets/#{$img}.png") no-repeat;
+        background: url("../assets/#{$img}.png") no-repeat;
         @extend .bg-img;
     }
     @media screen and (max-width: 960px) {
