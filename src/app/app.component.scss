@@ -23,6 +23,7 @@ $orange: #D35936;
     // background: linear-gradient(to right, #EA3354, #E837A5);
     // background: linear-gradient(to right, #B13FF5, #83C3F9);
     // transition: all 2s ease-in-out;
+    background: url('../assets/background.png') no-repeat;
 }
 
 @-webkit-keyframes typing { from { width: 0; } }
@@ -31,8 +32,7 @@ $orange: #D35936;
 .animate-monospace { 
     border-right: .1em solid black;
     width: 16.5em; 
-    width: 21ch;
-    margin: 0em 1em;
+    width: 26ch;
     white-space: nowrap;
     overflow: hidden;
     animation: typing 2s steps(21, end),
@@ -46,12 +46,19 @@ $imgs: 'build', 'code', 'email';
         background: url("../assets/#{$img}.png") no-repeat;
         @extend .bg-img;
     }
-    @media screen and (max-width: 765px) {
+    @media screen and (max-width: 960px) {
         .bg-img-#{$img}{
             background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url("../assets/#{$img}.png") no-repeat;
         }
     }
+}
 
+@media screen and (max-width: 940px){
+    .fill-svg{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
 }
 
 .t-slant{
@@ -97,6 +104,11 @@ li[id*="ngb-slide-"].active{
 .box{
     text-align: center;
     width: 100%;
+}
+
+.img-150{
+    width: 150px;
+    height: 150px;
 }
 
 a.carousel-control-prev, a.carousel-control-next{

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LangsComponent } from './langs/langs.component';
+import { LottieAnimationViewModule } from 'ng-lottie';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { LangsComponent } from './langs/langs.component';
   ],
   imports: [
     BrowserModule,
+    LottieAnimationViewModule.forRoot(),
     NgbModule.forRoot()
   ],
   providers: [],

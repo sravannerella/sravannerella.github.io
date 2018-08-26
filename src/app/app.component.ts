@@ -9,6 +9,10 @@ import { NgbCarouselConfig } from '../../node_modules/@ng-bootstrap/ng-bootstrap
 })
 export class AppComponent {
   title = 'app';
+  lottieConfig: Object;
+  lottieConfig2: Object;
+  anim: any;
+  animationSpeed: number = 1;
 
   images= [
     {img: "../assets/SyntaxPacket.png", name: "Syntax Packet", color: "primary", description: "A customizable modern file manager"},
@@ -22,6 +26,24 @@ export class AppComponent {
     config.showNavigationArrows = true;
     config.keyboard = false;
     config.pauseOnHover = false;
+
+    this.lottieConfig = {
+      path: 'assets/cycle_animation.json',
+      autoplay: true,
+      loop: true
+    };
+
+    this.lottieConfig2 = {
+      path: 'assets/layers.json',
+      autoplay: true,
+      loop: true
+    };
+
+  }
+
+  handleAnimation(anim: any) {
+    this.anim = anim;
+    this.anim.setSpeed(2);
   }
 
 

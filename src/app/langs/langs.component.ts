@@ -44,8 +44,8 @@ export class LangsComponent implements OnInit {
 			name: "Photoshop",
 			icon: "photoshop.png"
 		}, {
-			name: "PHP",
-			icon: "php.png"
+			name: "Swift",
+			icon: "swift.png"
 		}
 	]
 
