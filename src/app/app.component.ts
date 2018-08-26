@@ -10,12 +10,12 @@ import { NgbCarouselConfig } from '../../node_modules/@ng-bootstrap/ng-bootstrap
 export class AppComponent {
   title = 'app';
   lottieConfig: Object;
-  lottieConfig2: Object;
+  projectConfigs: Array<Object> = [];
   anim: any;
   animationSpeed: number = 1;
 
   images= [
-    {img: "../assets/SyntaxPacket.png", name: "Syntax Packet", color: "primary", description: "A customizable modern file manager"},
+    {img: "../assets/SyntaxPacket.png", name: "Syntax Packet", color: "darkBlue", description: "A customizable modern file manager"},
     {img: "../assets/flickmatics.png", name: "FlickMatics", color: "danger", description: "Personalized Movie Blogger for all"},
     {img: "../assets/hashcode.png", name: "#Code", color: "violet", description: "A hackable text editor to your liking"}
   ]
@@ -33,11 +33,16 @@ export class AppComponent {
       loop: true
     };
 
-    this.lottieConfig2 = {
-      path: 'assets/layers.json',
-      autoplay: true,
-      loop: true
-    };
+    let imgs = ['layers', 'spirit_geek', 'animated_laptop_'];
+
+    for(let i in imgs){
+      this.projectConfigs.push({
+        path: 'assets/' + imgs[i] +'.json',
+        autoplay: true,
+        loop: true
+      });
+    }
+    
 
   }
 

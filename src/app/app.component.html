@@ -1,19 +1,23 @@
 <div class="container-fluid px-0">
 	
-	<div class="d-flex align-items-center h60vh bg-gradient row">
-		<div class="mx-auto">
-			<h1 class="text-capitalize font-weight-bold">Hi,</h1>
-			<h1 class="text-capitalize font-weight-bold">I'm <span class="text-primary">Sravan Nerella</span></h1>
-			<p class="lead text-monospace animate-monospace">Full Stack Web Developer.</p>
-			<p class="lead text-monospace text-muted">Front End Designer / Angular / Ionic</p>
+	<div class="row h60vh bg-gradient row">
+		<div class="col-sm-12 col-md-6 my-5 d-flex align-items-center">
+			<h1 class="text-capitalize mx-auto font-weight-bold">Hi, 
+				<span><br>I'm <span class="text-primary">Sravan Nerella</span></span> <br>
+				<span class="lead text-monospace animate-monospace">Full Stack Web Developer.</span> <br>
+				<span class="lead text-monospace text-muted">Front End Designer / Angular / Ionic</span>
+			</h1>
 		</div>
-		<lottie-animation-view [options]="lottieConfig" class="fill-svg" (animCreated)="handleAnimation($event)"></lottie-animation-view>
+		<div class="col-sm-12 col-md-6 d-flex my-5 align-items-center">
+			<lottie-animation-view [options]="lottieConfig" class="fill-svg" (animCreated)="handleAnimation($event)"></lottie-animation-view>
+		</div>
 	</div>
 
 
-	<div class="row my-auto bg-img-build">
+	<div class="row my-auto bg-img-build min-h-350">
 		<div class="col-sm-12 col-md-6 d-flex my-5 align-items-center">
-			<h2 class="text-center mx-auto text-monospace"><span class="text-violet">let</span> me = <span class="text-violet">this</span>.<span class="text-info">guy</span></h2>
+			<!-- <h2 class="text-center mx-auto text-monospace"><span class="text-violet">let</span> me = <span class="text-violet">this</span>.<span class="text-info">guy</span></h2> -->
+			<h2 class="text-center mx-auto font-weight-bold">About <span class="text-primary">Me</span></h2>
 		</div>
 		<div class="col-sm-12 col-md-6 d-flex my-5 align-items-center">
 			<p class="lead text-monospace text-center mx-auto">
@@ -35,7 +39,7 @@
 
 	<div class="row bg-img-code">
 		<div class="col-sm-12 col-md-6 my-5 d-flex align-items-center my-5">
-			<h2 class="mx-auto text-center font-weight-bold">I <span class="text-info">Code</span> In</h2>
+			<h2 class="mx-auto text-center font-weight-bold">I <span class="text-primary">Code</span> In</h2>
 		</div>
 		<div class="col-sm-12 col-md-6 my-5 d-flex align-items-center">
 			<div class="mx-auto mw-400px">
@@ -49,12 +53,15 @@
 		<br>
 		<div class="d-flex justify-content-center">
 			<ngb-carousel class="w-100">
-				<ng-template ngbSlide *ngFor="let image of images">
+				<ng-template ngbSlide *ngFor="let image of images; index as i">
 					<div class="row">
 						<div class="col-sm-12 col-md-6 my-5 d-flex align-items-center">
 							<p class="lead text-center mx-auto">
 								<span class="text-{{image.color}} mx-auto text-center font-30 font-weight-bold">{{image.name}}</span><br>
 								<span class="text-monospace d-block mt-3">{{image.description}}</span>
+								<span>
+									<lottie-animation-view [options]="projectConfigs[i]" [width]="150" [height]="150" class="fill-svg" (animCreated)="handleAnimation($event)"></lottie-animation-view>
+								</span>
 							</p>
 						</div>
 						<div class="col-sm-12 col-md-6 my-5 d-flex align-items-center">
@@ -68,13 +75,13 @@
 		</div>
 	</div>
 
-	<div class="row my-auto bg-img-email">
+	<div class="row my-auto bg-img-email min-h-350">
 		<div class="col-sm-12 col-md-6 d-flex my-5 align-items-center">
-			<h2 class="mx-auto text-center font-weight-bold">Akhil <span class="text-info">Sravan</span> Kumar</h2>
+			<h2 class="mx-auto text-center font-weight-bold">Akhil <span class="text-primary">Sravan</span> Kumar</h2>
 		</div>
 		<div class="col-sm-12 col-md-6 d-flex my-5 align-items-center">
 			<div class="mx-auto mw-400px">
-				<h3 class="text-info text-center text-capitalize">Wanna Reach me ?</h3>
+				<h3 class="text-primary text-center text-capitalize">Wanna Reach me ?</h3>
 				<p class="text-center">Provide me your contact email, I will get back with you.</p>
 				<br>
 				<div>

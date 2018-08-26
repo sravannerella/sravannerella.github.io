@@ -1,9 +1,14 @@
 $dark: #212121;
+$darkBlue: #33315F;
 $violet: #A73E79;
 $orange: #D35936;
 
 .text-violet{
     color: $violet !important;
+}
+
+.text-darkBlue{
+    color: $darkBlue;
 }
 
 .text-orange{
@@ -124,4 +129,8 @@ a.carousel-control-prev, a.carousel-control-next{
     margin-right: 50px;
     margin-top: calc(496px / 2 - 50px);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3), 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.min-h-350{
+    min-height: 350px;
 }
