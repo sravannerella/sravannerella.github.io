@@ -48,12 +48,12 @@ $imgs: 'build', 'code', 'email';
 
 @each $img in $imgs {
     .bg-img-#{$img}{
-        background: url("../assets/#{$img}.png") no-repeat;
+        background: url("/assets/#{$img}.png") no-repeat;
         @extend .bg-img;
     }
     @media screen and (max-width: 960px) {
         .bg-img-#{$img}{
-            background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url("../assets/#{$img}.png") no-repeat;
+            background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url("/assets/#{$img}.png") no-repeat;
         }
     }
 }
