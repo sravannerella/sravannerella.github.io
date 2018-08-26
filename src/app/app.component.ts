@@ -15,9 +15,9 @@ export class AppComponent {
   animationSpeed: number = 1;
 
   images= [
-    {img: "assets/SyntaxPacket.png", name: "Syntax Packet", color: "darkBlue", description: "A customizable modern file manager"},
-    {img: "assets/flickmatics.png", name: "FlickMatics", color: "danger", description: "Personalized Movie Blogger for all"},
-    {img: "assets/hashcode.png", name: "#Code", color: "violet", description: "A hackable text editor to your liking"}
+    {img: "dist/profile/assets/SyntaxPacket.png", name: "Syntax Packet", color: "darkBlue", description: "A customizable modern file manager"},
+    {img: "dist/profile/assets/flickmatics.png", name: "FlickMatics", color: "danger", description: "Personalized Movie Blogger for all"},
+    {img: "dist/profile/assets/hashcode.png", name: "#Code", color: "violet", description: "A hackable text editor to your liking"}
   ]
 
   constructor(config: NgbCarouselConfig) {
