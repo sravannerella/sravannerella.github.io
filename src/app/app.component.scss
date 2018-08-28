@@ -134,3 +134,15 @@ a.carousel-control-prev, a.carousel-control-next{
 .min-h-350{
     min-height: 350px;
 }
+
+.modal-header{
+    border-bottom: 0px solid $dark;
+}
+
+.modal-footer{
+    border-top: 0px solid $dark;
+}
+
+.modal-content{
+    border-radius: 16px;
+}

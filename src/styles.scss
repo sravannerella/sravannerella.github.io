@@ -40,6 +40,24 @@
     }
 }
 
+@media screen and (max-width: 400px) {
+    .box{
+        img{
+            width: 350px;
+            height: 250px !important;
+        }
+    }
+    .p-xs-4{
+        padding: 1.5rem !important;
+    }
+    .emailBox{
+        input[type="text"]{
+            padding-left: 1.5rem;
+            width: 235px !important;
+        }
+    }
+}
+
 @for $i from 1 through 10 {
     $val : $i * 50;
     .w-#{$val}px{

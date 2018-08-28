@@ -1,6 +1,6 @@
 <div class="container-fluid px-0">
 	
-	<div class="row h60vh bg-gradient row">
+	<div class="row pt-4 px-4 bg-gradient row">
 		<div class="col-sm-12 col-md-6 my-5 d-flex align-items-center">
 			<h1 class="text-capitalize mx-auto font-weight-bold">Hi, 
 				<span><br>I'm <span class="text-primary">Sravan Nerella</span></span> <br>
@@ -13,6 +13,37 @@
 		</div>
 	</div>
 
+	<ng-template #content let-c="close" let-d="dismiss">
+		<div class="modal-header">
+			<h4 class="modal-title">Got It!</h4>
+			<button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			<lottie-animation-view [options]="sent" [width]="50" [height]="50" class="fill-svg" (animCreated)="handleAnimation($event)"></lottie-animation-view>
+			<p class="lead text-center">Thank you! I will be contacting you soon.</p>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-danger" (click)="c('Close click')">Close</button>
+		</div>
+	</ng-template>
+
+	<ng-template #error let-c="close" let-d="dismiss">
+		<div class="modal-header">
+			<h4 class="modal-title">Invalid Email!</h4>
+			<button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			<lottie-animation-view [options]="errors" [width]="50" [height]="50" class="fill-svg" (animCreated)="handleAnimation($event)"></lottie-animation-view>
+			<p class="lead text-center">Please re-check your email address</p>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-danger" (click)="c('Close click')">Close</button>
+		</div>
+	</ng-template>
 
 	<div class="row my-auto bg-img-build min-h-350">
 		<div class="col-sm-12 col-md-6 d-flex my-5 align-items-center">
@@ -21,17 +52,17 @@
 		</div>
 		<div class="col-sm-12 col-md-6 d-flex my-5 align-items-center">
 			<p class="lead text-monospace text-center mx-auto">
-				<span class="text-capitalize"><span class="text-success">Builds</span> and <span class="text-info">designs</span></span><br><br>
+				<span class="text-capitalize">I <span class="text-success">Design</span> and <span class="text-info">Develop</span></span><br><br>
 				<span class="text-warning">Web</span> &amp; <span class="text-primary">Mobile</span> <br> <br>
-				Apps
+				Applications
 			</p>
 		</div>
 	</div>
 	
 
-	<div class="d-flex align-items-center my-auto bg-light row">
+	<div class="d-flex p-4 align-items-center my-auto bg-light row">
 		<div class="text-center mx-auto my-5 container">
-			<h2 class="font-weight-bold">Expectations will never satisfy you, and comparison will never let you enjoy your achievements. Therefore, stop expecting more and comparing with others. 
+			<h2 class="font-weight-bold">Expectations will never satisfy you and comparison will never let you enjoy your achievements. Therefore, stop expecting more and comparing with others. 
 				</h2>
 			<p class="mt-3 lead text-monospace text-right">- Sravan Nerella</p>
 		</div>
@@ -55,7 +86,7 @@
 			<ngb-carousel class="w-100">
 				<ng-template ngbSlide *ngFor="let image of images; index as i">
 					<div class="row">
-						<div class="col-sm-12 col-md-6 my-5 d-flex align-items-center">
+						<div class="col-sm-12 col-md-6 mt-5 d-flex align-items-center">
 							<p class="lead text-center mx-auto">
 								<span class="text-{{image.color}} mx-auto text-center font-30 font-weight-bold">{{image.name}}</span><br>
 								<span class="text-monospace d-block mt-3">{{image.description}}</span>
@@ -80,15 +111,15 @@
 			<h2 class="mx-auto text-center font-weight-bold">Akhil <span class="text-primary">Sravan</span> Kumar</h2>
 		</div>
 		<div class="col-sm-12 col-md-6 d-flex my-5 align-items-center">
-			<div class="mx-auto mw-400px">
+			<div class="mx-auto mw-400px p-xs-4">
 				<h3 class="text-primary text-center text-capitalize">Wanna Reach me ?</h3>
 				<p class="text-center">Provide me your contact email, I will get back with you.</p>
 				<br>
-				<div>
-					<input type="text" class="shadow-lg p-3 w-300px">
-					<input type="submit" value="Email Me" class="shadow p-3 bg-primary text-white">
+				<div class="emailBox">
+					<input type="email" [(ngModel)]="email" class="shadow-lg p-3 w-300px">
+					<input type="submit" *ngIf="validateEmail()" (click)="sendEmail(content)" value="Email Me" class="shadow p-3 bg-primary text-white">
+					<input type="submit" *ngIf="!validateEmail()" (click)="sendEmail(error)" value="Email Me" class="shadow p-3 bg-primary text-white">
 				</div>
-
 			</div>
 		</div>
 	</div>
