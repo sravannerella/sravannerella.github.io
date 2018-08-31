@@ -8,17 +8,31 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment.prod';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FormsModule } from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import { ProfileComponent } from './profile/profile.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LangsComponent
+    LangsComponent,
+    ProfileComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     FormsModule,
+    RouterModule.forRoot([
+      {
+        path: "",
+        component: ProfileComponent
+      }, {
+        path: "blog",
+        component: BlogComponent
+      }
+    ]),
     LottieAnimationViewModule.forRoot(),
     NgbModule.forRoot()
   ],

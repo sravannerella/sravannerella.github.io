@@ -1,0 +1,44 @@
+@for $i from 0 to 100 {
+    .font-#{$i}{
+        font-size: $i + 0px;
+    }
+}
+
+
+.writing{
+    max-width: 400px;
+    max-height: 400px;
+    margin: 30px 15px;
+    overflow: hidden;
+    background: #212121;
+    border-radius: 10px;
+
+    &:hover > .writing-content{
+        transform: translate(0, -15px);
+        background: #fff;
+    }
+
+    .writing-img{
+        img{
+            width: 100%;
+            object-fit: contain;   
+        }
+    }
+
+    .writing-content{
+        flex: 1 1 auto;
+        padding: 1.25rem;
+        background: #fff;
+        flex-direction: column;
+        transition: transform 250ms ease;
+    }
+    
+    .writing-title{
+        font-weight: bold;
+    }
+    
+    .writing-time{
+        font-weight: lighter;
+        font-size: 12px;
+    }
+}

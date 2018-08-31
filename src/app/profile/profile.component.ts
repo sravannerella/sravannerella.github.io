@@ -1,15 +1,14 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { NgbCarouselConfig } from '../../node_modules/@ng-bootstrap/ng-bootstrap';
 import { AngularFireDatabase } from 'angularfire2/database';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, ModalDismissReasons, NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   encapsulation: ViewEncapsulation.None,
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss']
 })
-export class AppComponent {
+export class ProfileComponent {
   title = 'app';
   lottieConfig: Object;
   sent:Object;
