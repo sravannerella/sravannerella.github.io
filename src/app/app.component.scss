@@ -150,3 +150,9 @@ a.carousel-control-prev, a.carousel-control-next{
 .lh-3{
     line-height: 3rem;
 }
+
+@for $i from 0 to 100 {
+    .font-#{$i}{
+        font-size: $i + 0px;
+    }
+}

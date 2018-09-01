@@ -1,29 +1,89 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from '../interfaces/post';
+import { FirebaseServiceService } from '../../services/firebase-service.service';
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-blog',
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss']
+	selector: 'app-blog',
+	templateUrl: './blog.component.html',
+	styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent implements OnInit {
 
-  lottieConfig: Object;
-  anim: any;
+	anim: any;
+	writings: Observable<any[]>;
 
-  constructor() {
-    this.lottieConfig = {
-      path: 'assets/pencil_write.json',
-      autoplay: true,
-      loop: true
-    };
-  }
+	constructor(private firebase: FirebaseServiceService) {
 
-  handleAnimation(anim: any) {
-    this.anim = anim;
-    this.anim.setSpeed(1);
-  }
+		this.writings = this.firebase.getPosts().valueChanges();
 
-  ngOnInit() {
-  }
+		// this.writings = [
+		// 	{
+		// 		id: 1,
+		// 		author: "Sravan Nerella",
+		// 		title: "Gather Around",
+		// 		content: "test content",
+		// 		coverImg: "../../assets/event.jpeg",
+		// 		published: false,
+		// 		createdOn: new Date()
+		// 	},
+		// 	{
+		// 		id: 2,
+		// 		author: "Sravan Nerella",
+		// 		title: "Gather Around",
+		// 		content: "test content",
+		// 		coverImg: "../../assets/event.jpeg",
+		// 		published: false,
+		// 		createdOn: new Date()
+		// 	},
+		// 	{
+		// 		id: 3,
+		// 		author: "Sravan Nerella",
+		// 		title: "Gather Around",
+		// 		content: "test content",
+		// 		coverImg: "../../assets/event.jpeg",
+		// 		published: false,
+		// 		createdOn: new Date()
+		// 	},
+		// 	{
+		// 		id: 4,
+		// 		author: "Sravan Nerella",
+		// 		title: "Gather Around",
+		// 		content: "test content",
+		// 		coverImg: "../../assets/event.jpeg",
+		// 		published: false,
+		// 		createdOn: new Date()
+		// 	},
+		// 	{
+		// 		id: 5,
+		// 		author: "Sravan Nerella",
+		// 		title: "Gather Around",
+		// 		content: "test content",
+		// 		coverImg: "../../assets/event.jpeg",
+		// 		published: false,
+		// 		createdOn: new Date()
+		// 	},
+		// 	{
+		// 		id: 6,
+		// 		author: "Sravan Nerella",
+		// 		title: "Gather Around",
+		// 		content: "test content",
+		// 		coverImg: "../../assets/event.jpeg",
+		// 		published: false,
+		// 		createdOn: new Date()
+		// 	}, {
+		// 		id: 7,
+		// 		author: "Sravan Nerella",
+		// 		title: "Gather Around",
+		// 		content: "test content",
+		// 		coverImg: "../../assets/event.jpeg",
+		// 		published: false,
+		// 		createdOn: new Date()
+		// 	}
+		// ]
+	}
+
+	ngOnInit() {
+	}
 
 }
