@@ -40,6 +40,9 @@ import { HeaderWritingComponent } from './header-writing/header-writing.componen
       }, {
         path: "writing/:id",
         component: WritingComponent
+      }, {
+        path: "**",
+        component: ProfileComponent
       }
     ]),
     LottieAnimationViewModule.forRoot(),

@@ -23,12 +23,16 @@ export class WritingComponent implements OnInit {
 
 		this.route.params.subscribe((params) => {
 			this.firebase.getPostsById(params.id).valueChanges().subscribe( (data) => {
-				this.writings = data[0];
-				this.title = this.writings.title;
-				this.content = this.writings.content;
-				this.img = this.writings.coverImg;
-				this.author = this.writings.author;
-				this.createdOn = this.writings.createdOn;
+				if(data.length === 1) {
+					this.writings = data[0];
+					this.title = this.writings.title;
+					this.content = this.writings.content;
+					this.img = this.writings.coverImg;
+					this.author = this.writings.author;
+					this.createdOn = new Date(this.writings.createdOn).toDateString();
+				} else {
+					this.title = "NOT FOUND";
+				}
 			});
 		});
 	}

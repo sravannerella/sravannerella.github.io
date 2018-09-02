@@ -9,11 +9,12 @@ export class FirebaseServiceService {
   constructor(private afd: AngularFireDatabase) { }
 
   getPosts(){
-    return this.afd.list('/writings');
+    return this.afd.list('/writings', ref => ref.orderByChild('createdOn'));
   }
 
   getPostsById(id){
-    return this.afd.list('/writings', ref => ref.orderByChild('id').equalTo(1));
+    id = Number(id);
+    return this.afd.list('/writings', ref => ref.orderByChild('id').equalTo(id));
   }
 
 }

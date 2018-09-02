@@ -14,73 +14,7 @@ export class BlogComponent implements OnInit {
 	writings: Observable<any[]>;
 
 	constructor(private firebase: FirebaseServiceService) {
-
 		this.writings = this.firebase.getPosts().valueChanges();
-
-		// this.writings = [
-		// 	{
-		// 		id: 1,
-		// 		author: "Sravan Nerella",
-		// 		title: "Gather Around",
-		// 		content: "test content",
-		// 		coverImg: "../../assets/event.jpeg",
-		// 		published: false,
-		// 		createdOn: new Date()
-		// 	},
-		// 	{
-		// 		id: 2,
-		// 		author: "Sravan Nerella",
-		// 		title: "Gather Around",
-		// 		content: "test content",
-		// 		coverImg: "../../assets/event.jpeg",
-		// 		published: false,
-		// 		createdOn: new Date()
-		// 	},
-		// 	{
-		// 		id: 3,
-		// 		author: "Sravan Nerella",
-		// 		title: "Gather Around",
-		// 		content: "test content",
-		// 		coverImg: "../../assets/event.jpeg",
-		// 		published: false,
-		// 		createdOn: new Date()
-		// 	},
-		// 	{
-		// 		id: 4,
-		// 		author: "Sravan Nerella",
-		// 		title: "Gather Around",
-		// 		content: "test content",
-		// 		coverImg: "../../assets/event.jpeg",
-		// 		published: false,
-		// 		createdOn: new Date()
-		// 	},
-		// 	{
-		// 		id: 5,
-		// 		author: "Sravan Nerella",
-		// 		title: "Gather Around",
-		// 		content: "test content",
-		// 		coverImg: "../../assets/event.jpeg",
-		// 		published: false,
-		// 		createdOn: new Date()
-		// 	},
-		// 	{
-		// 		id: 6,
-		// 		author: "Sravan Nerella",
-		// 		title: "Gather Around",
-		// 		content: "test content",
-		// 		coverImg: "../../assets/event.jpeg",
-		// 		published: false,
-		// 		createdOn: new Date()
-		// 	}, {
-		// 		id: 7,
-		// 		author: "Sravan Nerella",
-		// 		title: "Gather Around",
-		// 		content: "test content",
-		// 		coverImg: "../../assets/event.jpeg",
-		// 		published: false,
-		// 		createdOn: new Date()
-		// 	}
-		// ]
 	}
 
 	ngOnInit() {

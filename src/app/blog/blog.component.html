@@ -12,11 +12,11 @@
 					<img [src]="writing?.coverImg" [alt]="writing?.title">
 				</div>
 				<div class="writing-content">
-					<div class="writing-title mx-auto">
+					<div class="writing-title mx-auto h-50px">
 						{{writing?.title}}
 					</div>
 					<div class="writing-time mx-auto">
-						{{writing?.createdOn}}
+						{{writing?.createdOn | date:'fullDate'}}
 					</div>
 				</div>
 			</div>
