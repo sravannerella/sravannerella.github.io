@@ -5,6 +5,7 @@
     overflow: hidden;
     background: #212121;
     border-radius: 10px;
+    cursor: pointer;
 
     &:hover > .writing-content{
         transform: translate(0, -15px);
