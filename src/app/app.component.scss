@@ -98,9 +98,13 @@ input{
     flex-grow: 1;
 }
 
+input[type='email']{
+    border-radius: 25px 0px 0px 25px;
+}
+
 input[type="submit"]{
     @extend input;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0px 25px 25px 0;
     height: 48px;
 }
 
@@ -141,8 +145,12 @@ a.carousel-control-prev, a.carousel-control-next{
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3), 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
-.min-h-350{
-    min-height: 350px;
+@for $i from 1 to 900 {
+    $val: $i*5;
+    $val : $val + 100;
+    .min-h-#{$val}{
+        min-height: $val + 0px;
+    }
 }
 
 .modal-header{
