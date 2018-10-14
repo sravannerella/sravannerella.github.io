@@ -30,23 +30,24 @@ import { HeaderWritingComponent } from './header-writing/header-writing.componen
     AngularFireDatabaseModule,
     FormsModule,
     BrowserAnimationsModule,
+    LottieAnimationViewModule.forRoot(),
+    NgbModule.forRoot(),
     RouterModule.forRoot([
       {
         path: "",
-        component: ProfileComponent
+        component: ProfileComponent,
+        pathMatch: 'full'
       }, {
         path: "writings",
         component: BlogComponent
       }, {
-        path: "writing/:id",
+        path: "writings/:id",
         component: WritingComponent
       }, {
         path: "**",
         component: ProfileComponent
       }
-    ]),
-    LottieAnimationViewModule.forRoot(),
-    NgbModule.forRoot()
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
