@@ -12,6 +12,14 @@ export class FirebaseServiceService {
     return this.afd.list('/writings', ref => ref.orderByChild('createdOn'));
   }
 
+  getScribbles(){
+      return this.afd.list('/scribbles', ref => ref.orderByChild('createdOn'));
+  }
+
+  getGuides(){
+      return this.afd.list('/guides', ref=> ref.orderByChild('createdOn'));
+  }
+
   getPostsById(id){
     id = Number(id);
     return this.afd.list('/writings', ref => ref.orderByChild('id').equalTo(id));

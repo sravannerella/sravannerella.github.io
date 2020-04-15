@@ -38,8 +38,8 @@ export class LangsComponent implements OnInit {
 			name: "MongoDB",
 			icon: "mongo.png"
 		}, {
-			name: "Laravel",
-			icon: "laravel.png"
+			name: "React",
+			icon: "react.png"
 		}, {
 			name: "Photoshop",
 			icon: "photoshop.png"

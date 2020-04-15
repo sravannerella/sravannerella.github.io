@@ -25,7 +25,11 @@
 						{{writing?.createdOn | date:'fullDate'}}
 					</div>
 				</div>
-			</div>
+            </div>
+
+            <div *ngIf="(writings | async)?.length === 0">
+                Seems like I've to add some posts
+            </div>
 
 		</div>
 	</div>
@@ -35,7 +39,7 @@
 
 		<div class="row">
 
-			<div class="writing" *ngFor="let writing of writings | async" routerLink="/writings/{{writing.id}}">
+			<div class="writing" *ngFor="let writing of scribbles | async" routerLink="/writings/{{writing.id}}">
 				<div class="writing-img">
 					<img [src]="writing?.coverImg" [alt]="writing?.title">
 				</div>
@@ -47,7 +51,13 @@
 						{{writing?.createdOn | date:'fullDate'}}
 					</div>
 				</div>
-			</div>
+            </div>
+            
+            <div *ngIf="(scribbles | async)?.length === 0">
+                <div class="not-found">
+                    Seems like I've to add some posts
+                </div>
+            </div>
 
 		</div>
 	</div>
@@ -57,7 +67,7 @@
 
 		<div class="row">
 
-			<div class="writing" *ngFor="let writing of writings | async" routerLink="/writings/{{writing.id}}">
+			<div class="writing" *ngFor="let writing of guides | async" routerLink="/writings/{{writing.id}}">
 				<div class="writing-img">
 					<img [src]="writing?.coverImg" [alt]="writing?.title">
 				</div>
@@ -69,7 +79,13 @@
 						{{writing?.createdOn | date:'fullDate'}}
 					</div>
 				</div>
-			</div>
+            </div>
+            
+            <div *ngIf="(guides | async)?.length === 0">
+                <div class="not-found">
+                    Seems like I've to add some posts
+                </div>
+            </div>
 
 		</div>
 	</div>

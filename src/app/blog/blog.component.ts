@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from '../interfaces/post';
 import { FirebaseServiceService } from '../../services/firebase-service.service';
 import { Observable } from 'rxjs';
 
@@ -10,12 +9,15 @@ import { Observable } from 'rxjs';
 })
 export class BlogComponent implements OnInit {
 
-	anim: any;
-	writings: Observable<any[]>;
+    writings: Observable<any[]>;
+    scribbles: Observable<any[]>;
+    guides: Observable<any[]>;
 
 	constructor(private firebase: FirebaseServiceService) {
-		this.writings = this.firebase.getPosts().valueChanges();
-	}
+        this.writings = this.firebase.getPosts().valueChanges();
+        this.scribbles = this.firebase.getScribbles().valueChanges();
+        this.guides = this.firebase.getGuides().valueChanges();
+    }
 
 	ngOnInit() {
 	}
