@@ -25,4 +25,15 @@ export class FirebaseServiceService {
     return this.afd.list('/writings', ref => ref.orderByChild('id').equalTo(id));
   }
 
+  getScribblesById(id){
+    id = Number(id);
+    console.log("ID:", id);
+    return this.afd.list('/scribbles', ref => ref.orderByChild('id').equalTo(id));
+  }
+
+  getGuidesById(id){
+    id = Number(id);
+    return this.afd.list('/guides', ref => ref.orderByChild('id').equalTo(id));
+  }
+
 }

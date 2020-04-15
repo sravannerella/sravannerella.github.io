@@ -35,11 +35,11 @@
 	</div>
 
 	<div class="mt-3 p-4">
-		<p class="lead text-uppercase font-weight-bold font-17 text-muted">Scribbling Ideas</p>
+		<p class="lead text-uppercase font-weight-bold font-17 text-muted">Scribbles</p>
 
 		<div class="row">
 
-			<div class="writing" *ngFor="let writing of scribbles | async" routerLink="/writings/{{writing.id}}">
+			<div class="writing" *ngFor="let writing of scribbles | async" routerLink="/scribbles/{{writing.id}}">
 				<div class="writing-img">
 					<img [src]="writing?.coverImg" [alt]="writing?.title">
 				</div>
@@ -67,7 +67,7 @@
 
 		<div class="row">
 
-			<div class="writing" *ngFor="let writing of guides | async" routerLink="/writings/{{writing.id}}">
+			<div class="writing" *ngFor="let writing of guides | async" routerLink="/guides/{{writing.id}}">
 				<div class="writing-img">
 					<img [src]="writing?.coverImg" [alt]="writing?.title">
 				</div>

@@ -44,6 +44,12 @@ import { HeaderWritingComponent } from './header-writing/header-writing.componen
         path: "writings/:id",
         component: WritingComponent
       }, {
+        path: "scribbles/:id",
+        component: WritingComponent
+      }, {
+        path: "guides/:id",
+        component: WritingComponent
+      },{
         path: "**",
         component: ProfileComponent
       }
